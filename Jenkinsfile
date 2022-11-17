@@ -1,7 +1,7 @@
 def PROJECT_NAME = "sample-api"
-def gitUrl = "https://github.com/oscka/${PROJECT_NAME}.git"
+def gitUrl = "https://github.com/jaydenseo/${PROJECT_NAME}.git"
 def imgRegistry = "https://registry.hub.docker.com"
-def gitOpsUrl = "github.com/oscka/sample-gitops.git"
+def gitOpsUrl = "github.com/jaydenseo/sample-gitops.git"
 def opsBranch = "main"
 /////////////////////////////
 pipeline {
@@ -39,7 +39,7 @@ pipeline {
                 script{
                     sh """
                         cd ./simple-api/blue-green
-                        kustomize edit set image oscka/sample-api:${TAG}
+                        kustomize edit set image jaydenseo/sample-api:${TAG}
                         # 로컬외에는 주석 제거한다
                         git config --global user.email "admin@demo.com"
                         git config --global user.name "admin"
