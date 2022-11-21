@@ -5,9 +5,9 @@ def gitOpsUrl = "https://github.com/jaydenseo/sample-gitops.git"
 def opsBranch = "main"
 /////////////////////////////
 pipeline {
-     environment {
+    environment {
          PATH = "$PATH:/usr/local/bin/"  //maven, skaffold, argocd,jq path
-       }
+    }
     agent any
     stages {
         stage('Build') {
@@ -41,7 +41,7 @@ pipeline {
                         sh """
                         git clone ${gitOpsUrl}
                         cd ./sample-gitops/sample-api/rolling-update-no-istio
-                        kustomize edit set image oscka/sample-api:${TAG}
+                        kustomize edit set image jaydenseo/sample-api:${TAG}
                         # 로컬외에는 주석 제거한다
                         git config --global user.email "admin@demo.com"
                         git config --global user.name "admin"
