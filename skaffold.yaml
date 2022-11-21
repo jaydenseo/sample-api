@@ -7,7 +7,7 @@ profiles:
       local:
         push: true
       artifacts:
-        - image: jaydenseo/sample-api
+        - image: oscka/sample-api
           jib:
             args:
               - -DskipTests
